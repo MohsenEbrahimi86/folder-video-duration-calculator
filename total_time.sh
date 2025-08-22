@@ -1,0 +1,1 @@
+find . -name "*.mp4" -exec ffprobe -v error -show_entries format=duration -of default=nw=1:nokey=1 {} \; | awk '{sum+=$1} END {print "Total seconds:", sum; print "Total minutes:", sum/60; print "Total hours:", sum/3600}'
